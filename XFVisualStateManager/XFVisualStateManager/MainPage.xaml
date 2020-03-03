@@ -7,33 +7,90 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Lime" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Focused">
+                                <VisualState.Setters>
+                                    <Setter Property="FontSize" Value="36" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Pink" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <StackLayout>
         <!--  Place new controls here  -->
         <Label
             HorizontalOptions="Center"
             Text="Welcome to Xamarin.Forms!"
             VerticalOptions="CenterAndExpand" />
-        <Entry FontSize="18" IsEnabled="False">
-            <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal">
-                        <VisualState.Setters>
-                            <Setter Property="BackgroundColor" Value="Lime" />
-                        </VisualState.Setters>
-                    </VisualState>
-                    <VisualState x:Name="Focused">
-                        <VisualState.Setters>
-                            <Setter Property="FontSize" Value="36" />
-                        </VisualState.Setters>
-                    </VisualState>
-                    <VisualState x:Name="Disabled">
-                        <VisualState.Setters>
-                            <Setter Property="BackgroundColor" Value="Pink" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
-        </Entry>
+        <Entry
+            FontSize="18"
+            IsEnabled="False"
+            Placeholder="Entry1" />
+        <Entry
+            FontSize="18"
+            IsEnabled="True"
+            Placeholder="Entry2" />
+
+        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="Button">
+                        <Setter Property="VisualStateManager.VisualStateGroups">
+                            <VisualStateGroupList>
+                                <VisualStateGroup x:Name="buttonState">
+                                    <VisualState x:Name="SelectedState">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="Purple" />
+                                            <Setter Property="TextColor" Value="White" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="UnSelectedState">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="Transparent" />
+                                            <Setter Property="TextColor" Value="Black" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateGroupList>
+                        </Setter>
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+
+            <Button
+                BackgroundColor="Transparent"
+                Clicked="Button_Clicked"
+                Text="Button1" />
+            <Button
+                BackgroundColor="Transparent"
+                Clicked="Button_Clicked"
+                Text="Button2" />
+            <Button
+                BackgroundColor="Transparent"
+                Clicked="Button_Clicked"
+                Text="Button3" />
+
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>

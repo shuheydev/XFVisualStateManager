@@ -13,9 +13,22 @@ namespace XFVisualStateManager
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        private Button _lastbutton;
         public MainPage()
         {
+
             InitializeComponent();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            //最後に選択したボタンがNullじゃない
+            if (_lastbutton != null)
+            {
+                VisualStateManager.GoToState(_lastbutton, "UnSelectedState");
+            }
+            _lastbutton = (Button)sender;
+            VisualStateManager.GoToState(_lastbutton, "SelectedState");
         }
     }
 }
