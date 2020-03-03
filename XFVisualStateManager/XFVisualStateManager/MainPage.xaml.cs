@@ -14,6 +14,7 @@ namespace XFVisualStateManager
     public partial class MainPage : ContentPage
     {
         private Button _lastbutton;
+        private Button _lastbutton2;
         public MainPage()
         {
 
@@ -29,6 +30,16 @@ namespace XFVisualStateManager
             }
             _lastbutton = (Button)sender;
             VisualStateManager.GoToState(_lastbutton, "SelectedState");
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            if(_lastbutton2!=null)
+            {
+                VisualStateManager.GoToState(_lastbutton2, "Normal");
+            }
+            _lastbutton2 = (Button)sender;
+            VisualStateManager.GoToState(_lastbutton2, "Selected");
         }
     }
 }

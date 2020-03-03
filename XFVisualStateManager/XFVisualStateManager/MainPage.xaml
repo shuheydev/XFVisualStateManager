@@ -33,6 +33,20 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
+            <Style TargetType="Button">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Red" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Normal" />
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -50,6 +64,7 @@
             FontSize="18"
             IsEnabled="True"
             Placeholder="Entry2" />
+        <Button Text="Pressed become red" />
 
         <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
             <StackLayout.Resources>
