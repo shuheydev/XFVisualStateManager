@@ -85,6 +85,7 @@
                                             <Setter Property="TextColor" Value="Black" />
                                         </VisualState.Setters>
                                     </VisualState>
+                                    <VisualState x:Name="Normal" />
                                 </VisualStateGroup>
                             </VisualStateGroupList>
                         </Setter>
@@ -94,15 +95,15 @@
 
             <Button
                 BackgroundColor="Transparent"
-                Clicked="Button_Clicked"
+                Clicked="Button_Clicked_1"
                 Text="Button1" />
             <Button
                 BackgroundColor="Transparent"
-                Clicked="Button_Clicked"
+                Clicked="Button_Clicked_1"
                 Text="Button2" />
             <Button
                 BackgroundColor="Transparent"
-                Clicked="Button_Clicked"
+                Clicked="Button_Clicked_1"
                 Text="Button3" />
 
         </StackLayout>

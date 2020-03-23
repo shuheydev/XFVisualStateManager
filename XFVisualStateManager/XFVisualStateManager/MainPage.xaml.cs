@@ -34,12 +34,12 @@ namespace XFVisualStateManager
 
         private void Button_Clicked_1(object sender, EventArgs e)
         {
-            if(_lastbutton2!=null)
+            if (_lastbutton2 != null)
             {
                 VisualStateManager.GoToState(_lastbutton2, "Normal");
             }
             _lastbutton2 = (Button)sender;
-            VisualStateManager.GoToState(_lastbutton2, "Selected");
+            VisualStateManager.GoToState(_lastbutton2, "SelectedState");
         }
     }
 }
